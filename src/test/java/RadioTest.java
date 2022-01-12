@@ -7,19 +7,19 @@ class RadioTest {
 
     @Test
     public void shouldUseConstructor() {
-        Radio rad1 = new Radio(0,9, 0,100,5, 50);
+        Radio rad1 = new Radio(0,9, 0,100,5, 5);
 
         assertEquals(5, rad1.currentStation);
 
-        Radio rad2 = new Radio(0,9, 0,100,9, 50);
+        Radio rad2 = new Radio(0,9, 0,100,9, 9);
 
         assertEquals(9, rad2.currentStation);
 
-        Radio rad3 = new Radio(0,9, 0,100,5, 100);
+        Radio rad3 = new Radio(0,9, 0,100,100, 1);
 
-        assertEquals(100, rad3.currentVolume);
+        assertEquals(1, rad3.currentVolume);
 
-        Radio rad4 = new Radio(0,9, 0,100,5, 0);
+        Radio rad4 = new Radio(0,9, 0,100,0, 0);
 
         assertEquals(0, rad4.currentVolume);
     }
@@ -28,16 +28,14 @@ class RadioTest {
     @Test
     public void setCurrentStation() {
         Radio rad = new Radio(0,9, 0,100,9, 50);
-        int currentStation = 9;
-        int actual = currentStation;
+        int actual = rad.currentStation;
         assertEquals(9, actual);
     }
 
     @Test
     public void setCurrentStation2() {
         Radio rad = new Radio(0,9, 0,100,0, 50);
-        int currentStation = 0;
-        int actual = currentStation;
+        int actual = rad.currentStation;
         assertEquals(0, actual);
     }
 
@@ -72,9 +70,9 @@ class RadioTest {
 
     @Test
     public void volumeUp() {
-        Radio rad = new Radio(0,9, 0,100,5, 10);
-        int actual = rad.volumeUp(10);
-        assertEquals(11, actual);
+        Radio rad = new Radio(0,9, 0,100,5, 100);
+        int actual = rad.volumeUp(100);
+        assertEquals(100, actual);
     }
 
     @Test

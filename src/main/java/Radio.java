@@ -1,17 +1,25 @@
+import java.lang.reflect.Constructor;
+
 public class Radio {
 
+    public int currentVolume;
     int minRadio;
     int maxRadio;
-    private int currentVolume;
     int minVolume;
     int maxVolume;
     public int currentStation;
-    public int radioStation;
 
-    public void setCurrentStation(int currentStation) {
-        this.currentStation = currentStation;
+    public Radio() {
     }
 
+    public Radio(int minRadio, int maxRadio, int minVolume, int maxVolume, int currentVolume, int currentStation) {
+        this.minRadio = minRadio;
+        this.maxRadio = maxRadio;
+        this.minVolume = minVolume;
+        this.maxVolume = maxVolume;
+        this.currentVolume = currentVolume;
+        this.currentStation = currentStation;
+    }
 
     public int nextStation(int currentStation) {
         if (currentStation == maxRadio) {

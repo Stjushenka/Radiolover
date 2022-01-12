@@ -1,25 +1,20 @@
-import java.lang.reflect.Constructor;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 
 public class Radio {
 
-    public int currentVolume;
     int minRadio;
     int maxRadio;
     int minVolume;
     int maxVolume;
+    public int currentVolume;
     public int currentStation;
 
-    public Radio() {
-    }
-
-    public Radio(int minRadio, int maxRadio, int minVolume, int maxVolume, int currentVolume, int currentStation) {
-        this.minRadio = minRadio;
-        this.maxRadio = maxRadio;
-        this.minVolume = minVolume;
-        this.maxVolume = maxVolume;
-        this.currentVolume = currentVolume;
-        this.currentStation = currentStation;
-    }
 
     public int nextStation(int currentStation) {
         if (currentStation == maxRadio) {
@@ -28,7 +23,7 @@ public class Radio {
             return currentStation;
         }
 
-            this.currentStation = currentStation ++;
+        this.currentStation = currentStation ++;
         return currentStation;
     }
 
@@ -58,5 +53,5 @@ public class Radio {
         return currentVolume;
 
     }
-}
 
+}

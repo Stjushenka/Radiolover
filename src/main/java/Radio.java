@@ -8,8 +8,9 @@ public class Radio {
     public int currentStation;
 
 
-    public void setCurrentStation(int currentStation) {
+    public int setCurrentStation() {
         this.currentStation = currentStation;
+        return currentStation;
     }
 
 
@@ -47,14 +48,11 @@ public class Radio {
     }
 
     public int volumeDown() {
-        this.currentVolume = currentVolume;
-        if (currentVolume > minVolume) {
-            currentVolume = currentVolume - 1;
+        if (currentVolume == minVolume) {
+            currentVolume = minVolume;
             return currentVolume;
         }
-        else {
-            currentVolume = minVolume;
-        }
+        currentVolume = currentVolume - 1;
         return currentVolume;
 
     }

@@ -9,8 +9,8 @@ class RadioTest {
         Radio rad = new Radio();
         rad.minRadio = 0;
         rad.maxRadio = 9;
-        int currentStation = 9;
-        int actual = currentStation;
+        rad.currentStation = 9;
+        int actual = rad.setCurrentStation();
         assertEquals(9, actual);
     }
 
@@ -19,8 +19,8 @@ class RadioTest {
         Radio rad = new Radio();
         rad.minRadio = 0;
         rad.maxRadio = 9;
-        int currentStation = 0;
-        int actual = currentStation;
+        rad.currentStation = 0;
+        int actual = rad.setCurrentStation();
         assertEquals(0, actual);
     }
 
@@ -91,7 +91,7 @@ class RadioTest {
         rad.minVolume = 0;
         rad.maxVolume = 10;
         rad.currentVolume = 0;
-        int actual = rad.currentVolume;
+        int actual = rad.volumeDown();
         assertEquals(0, actual);
     }
 
@@ -103,6 +103,16 @@ class RadioTest {
         rad.currentVolume = 10;
         int actual = rad.volumeDown();
         assertEquals(9, actual);
+    }
+
+    @Test
+    public void volumeDown3() {
+        Radio rad = new Radio();
+        rad.minVolume = 0;
+        rad.maxVolume = 10;
+        rad.currentVolume = 5;
+        int actual = rad.volumeDown();
+        assertEquals(4, actual);
     }
 
 }

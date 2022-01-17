@@ -1,10 +1,10 @@
 public class Radio {
 
-    int minRadio;
-    int maxRadio;
+    private int minRadio = 0;
+    private int maxRadio = 9;
+    private int minVolume = 0;
+    private int maxVolume = 10;
     public int currentVolume;
-    int minVolume;
-    int maxVolume;
     public int currentStation;
 
 

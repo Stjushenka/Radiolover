@@ -6,14 +6,14 @@ public class Radio {
     private int maxVolume = 100;
     public int currentVolume;
     public int currentStation;
-    public int maxStation = maxRadio + 1;
+    public int maxStation;
 
 
     public Radio() {
     }
 
     public Radio(int maxStation) {
-        this.maxStation = maxStation;
+        this.maxStation = maxStation+1;
     }
 
 

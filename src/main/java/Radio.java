@@ -6,7 +6,7 @@ public class Radio {
     private int maxVolume = 100;
     public int currentVolume;
     public int currentStation;
-    public int maxStation;
+    public int maxStation = maxRadio + 1;
 
 
     public Radio() {

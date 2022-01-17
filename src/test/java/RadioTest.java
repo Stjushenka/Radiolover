@@ -8,21 +8,27 @@ class RadioTest {
     @Test
     public void shouldUseConstructor() {
         Radio rad0 = new Radio(20);
-        assertEquals(20, rad0.getCurrentStation());
+        rad0.setCurrentStation(15);
+
+        assertEquals(15, rad0.getCurrentStation());
 
         Radio rad1 = new Radio(5);
+        rad1.setCurrentStation(2);
 
-        assertEquals(5, rad1.getCurrentStation());
+        assertEquals(2, rad1.getCurrentStation());
 
-        Radio rad2 = new Radio(10);
+        Radio rad2 = new Radio(30);
+        rad2.setCurrentStation(22);
 
-        assertEquals(10, rad2.getCurrentStation());
+        assertEquals(22, rad2.getCurrentStation());
 
         Radio rad3 = new Radio(1);
+        rad3.setCurrentStation(1);
 
         assertEquals(1, rad3.getCurrentStation());
 
         Radio rad4 = new Radio(43);
+        rad4.setCurrentStation(43);
 
         assertEquals(43, rad4.getCurrentStation());
     }
@@ -31,16 +37,14 @@ class RadioTest {
     @Test
     public void setCurrentStation() {
         Radio rad = new Radio();
-        rad.currentStation = 9;
-        int actual = rad.setCurrentStation();
+        int actual = rad.setCurrentStation(9);
         assertEquals(9, actual);
     }
 
     @Test
     public void setCurrentStation2() {
         Radio rad = new Radio();
-        rad.currentStation = 0;
-        int actual = rad.setCurrentStation();
+        int actual = rad.setCurrentStation(0);
         assertEquals(0, actual);
     }
 

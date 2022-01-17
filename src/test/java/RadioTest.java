@@ -37,7 +37,7 @@ class RadioTest {
     @Test
     public void setCurrentStation() {
         Radio rad = new Radio();
-        rad.maxStation = 9;
+        rad.maxRadio = 9;
         int actual = rad.setCurrentStation(10);
         assertEquals(9, actual);
     }
@@ -53,6 +53,7 @@ class RadioTest {
     public void nextStation() {
         Radio rad = new Radio();
         rad.currentStation = 9;
+        rad.maxRadio = 9;
         int actual = rad.nextStation();
         assertEquals(0, actual);
     }
@@ -61,6 +62,7 @@ class RadioTest {
     public void nextStation2() {
         Radio rad = new Radio();
         rad.currentStation = 0;
+        rad.maxRadio = 9;
         int actual = rad.nextStation();
         assertEquals(1, actual);
     }
@@ -70,6 +72,7 @@ class RadioTest {
     public void prewStation() {
         Radio rad = new Radio();
         rad.currentStation = 0;
+        rad.maxRadio = 9;
         int actual = rad.prevStation();
         assertEquals(9, actual);
     }

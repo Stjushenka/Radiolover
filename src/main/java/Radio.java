@@ -4,15 +4,19 @@ public class Radio {
     private int maxRadio = 9;
     private int minVolume = 0;
     private int maxVolume = 10;
-    public int currentVolume;
-    public int currentStation;
+    private int currentVolume;
+    private int currentStation;
 
 
-    public int setCurrentStation() {
+    public int setCurrentStation(int currentStation) {
         this.currentStation = currentStation;
         return currentStation;
     }
 
+    public void setCurrentVolume(int currentVolume) {
+        this.currentVolume = currentVolume;
+        return;
+    }
 
     public int nextStation() {
         if (currentStation == maxRadio) {

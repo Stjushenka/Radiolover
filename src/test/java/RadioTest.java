@@ -37,8 +37,8 @@ class RadioTest {
     @Test
     public void setCurrentStation() {
         Radio rad = new Radio();
-        rad.maxRadio = 9;
-        int actual = rad.setCurrentStation(10);
+        rad.setMaxRadio(9);
+        int actual = rad.setCurrentStation(9);
         assertEquals(9, actual);
     }
 
@@ -52,8 +52,8 @@ class RadioTest {
     @Test
     public void nextStation() {
         Radio rad = new Radio();
-        rad.currentStation = 9;
-        rad.maxRadio = 9;
+        rad.setCurrentStation(9);
+        rad.setMaxRadio(9);
         int actual = rad.nextStation();
         assertEquals(0, actual);
     }
@@ -61,8 +61,8 @@ class RadioTest {
     @Test
     public void nextStation2() {
         Radio rad = new Radio();
-        rad.currentStation = 0;
-        rad.maxRadio = 9;
+        rad.setCurrentStation(0);
+        rad.setMaxRadio(9);
         int actual = rad.nextStation();
         assertEquals(1, actual);
     }
@@ -71,8 +71,8 @@ class RadioTest {
     @Test
     public void prewStation() {
         Radio rad = new Radio();
-        rad.currentStation = 0;
-        rad.maxRadio = 9;
+        rad.setCurrentStation(0);
+        rad.setMaxRadio(9);
         int actual = rad.prevStation();
         assertEquals(9, actual);
     }
@@ -80,7 +80,7 @@ class RadioTest {
     @Test
     public void prewStation2() {
         Radio rad = new Radio();
-        rad.currentStation = 9;
+        rad.setCurrentStation(9);
         int actual = rad.prevStation();
         assertEquals(8, actual);
     }
@@ -88,7 +88,7 @@ class RadioTest {
     @Test
     public void volumeUp() {
         Radio rad = new Radio();
-        rad.currentVolume = 100;
+        rad.setCurrentVolume(100);
         int actual = rad.volumeUp();
         assertEquals(100, actual);
     }
@@ -96,7 +96,7 @@ class RadioTest {
     @Test
     public void volumeUp2() {
         Radio rad = new Radio();
-        rad.currentVolume = 0;
+        rad.setCurrentVolume(0);
         int actual = rad.volumeUp();
         assertEquals(1, actual);
     }
@@ -104,7 +104,7 @@ class RadioTest {
     @Test
     public void volumeDown() {
         Radio rad = new Radio();
-        rad.currentVolume = 0;
+        rad.setCurrentVolume(0);
         int actual = rad.volumeDown();
         assertEquals(0, actual);
     }
@@ -112,7 +112,8 @@ class RadioTest {
     @Test
     public void volumeDown2() {
         Radio rad = new Radio();
-        rad.currentVolume = 100;
+        rad.setCurrentVolume(100);
+        rad.setMaxRadio(100);
         int actual = rad.volumeDown();
         assertEquals(99, actual);
     }

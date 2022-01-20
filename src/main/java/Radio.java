@@ -8,17 +8,23 @@ import lombok.NoArgsConstructor;
 
 public class Radio {
 
-    int minRadio;
-    int maxRadio;
-    int minVolume;
-    int maxVolume;
-    public int currentVolume;
-    public int currentStation;
+    private int minRadio;
+    private int maxRadio;
+    private int minVolume;
+    private int maxVolume;
+    private  int currentVolume;
+    private int currentStation;
 
-    public int setCurrentStation() {
+    public int setCurrentStation(int currentStation) {
         this.currentStation = currentStation;
         return currentStation;
     }
+
+    public int setCurrentVolume(int currentVolume) {
+        this.currentVolume = currentVolume;
+        return currentVolume;
+    }
+
 
     public int nextStation() {
         if (currentStation == maxRadio) {

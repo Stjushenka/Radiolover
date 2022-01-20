@@ -11,33 +11,37 @@ class RadioTest {
     public void shouldUseConstructor() {
         Radio rad1 = new Radio(0,9, 0,100,5, 5);
 
-        assertEquals(5, rad1.currentStation);
+        int actual = rad1.setCurrentStation(5);
+        assertEquals(5,actual);
 
         Radio rad2 = new Radio(0,9, 0,100,9, 9);
 
-        assertEquals(9, rad2.currentStation);
+        actual = rad1.setCurrentStation(9);
+        assertEquals(9, actual);
 
         Radio rad3 = new Radio(0,9, 0,100,100, 1);
 
-        assertEquals(100, rad3.currentVolume);
+        actual = rad1.setCurrentVolume(100);
+        assertEquals(100, actual);
 
         Radio rad4 = new Radio(0,9, 0,100,0, 0);
 
-        assertEquals(0, rad4.currentVolume);
+        actual = rad1.setCurrentVolume(0);
+        assertEquals(0, actual);
     }
 
 
     @Test
     public void setCurrentStation() {
         Radio rad = new Radio(0,9, 0,100,9, 9);
-        int actual = rad.setCurrentStation();
+        int actual = rad.setCurrentStation(9);
         assertEquals(9, actual);
     }
 
     @Test
     public void setCurrentStation2() {
         Radio rad = new Radio(0,9, 0,100,0, 0);
-        int actual = rad.setCurrentStation();
+        int actual = rad.setCurrentStation(0);
         assertEquals(0, actual);
     }
 

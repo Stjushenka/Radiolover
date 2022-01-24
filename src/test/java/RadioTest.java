@@ -8,7 +8,7 @@ class RadioTest {
     public void setCurrentStation() {
         Radio rad = new Radio();
 
-        int actual = rad.setCurrentStation(9);
+        int actual = rad.setCurrentStation(11);
         assertEquals(9, actual);
     }
 
@@ -17,6 +17,30 @@ class RadioTest {
         Radio rad = new Radio();
         int actual = rad.setCurrentStation(0);
         assertEquals(0, actual);
+    }
+
+    @Test
+    public void setCurrentVolume() {
+        Radio rad = new Radio();
+
+        int actual = rad.setCurrentVolume(11);
+        assertEquals(10, actual);
+    }
+
+    @Test
+    public void setCurrentVolume2() {
+        Radio rad = new Radio();
+
+        int actual = rad.setCurrentVolume(0);
+        assertEquals(0, actual);
+    }
+
+    @Test
+    public void setCurrentVolume3() {
+        Radio rad = new Radio();
+
+        int actual = rad.setCurrentVolume(5);
+        assertEquals(5, actual);
     }
 
     @Test

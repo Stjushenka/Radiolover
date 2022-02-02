@@ -12,7 +12,7 @@ public class Radio {
     private int maxRadio;
     private int minVolume;
     private int maxVolume;
-    private  int currentVolume;
+    private int currentVolume;
     private int currentStation;
 
     public int setCurrentStation(int currentStation) {

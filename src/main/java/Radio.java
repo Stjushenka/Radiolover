@@ -6,8 +6,8 @@ public class Radio {
     private int maxRadio;
     private int minVolume = 0;
     private int maxVolume = 100;
-    public int currentVolume;
-    public int currentStation;
+    private int currentVolume;
+    private int currentStation;
 
 
 

@@ -8,29 +8,29 @@ class RadioTest {
     @Test
     public void shouldUseConstructor() {
         Radio rad0 = new Radio(20);
-        int actual = rad0.setCurrentStation(15);
+        int actual = rad0.setRadioStation(15);
 
-        assertEquals(15, actual);
+        assertEquals(14, actual);
 
         Radio rad1 = new Radio(5);
-        actual = rad1.setCurrentStation(2);
-
-        assertEquals(2, actual);
-
-        Radio rad2 = new Radio(30);
-        actual = rad2.setCurrentStation(22);
-
-        assertEquals(22, actual);
-
-        Radio rad3 = new Radio(1);
-        actual = rad3.setCurrentStation(1);
+        actual = rad1.setRadioStation(2);
 
         assertEquals(1, actual);
 
-        Radio rad4 = new Radio(43);
-        actual = rad4.setCurrentStation(43);
+        Radio rad2 = new Radio(30);
+        actual = rad2.setRadioStation(22);
 
-        assertEquals(43, actual);
+        assertEquals(21, actual);
+
+        Radio rad3 = new Radio(1);
+        actual = rad3.setRadioStation(1);
+
+        assertEquals(0, actual);
+
+        Radio rad4 = new Radio(43);
+        actual = rad4.setRadioStation(43);
+
+        assertEquals(42, actual);
     }
 
 

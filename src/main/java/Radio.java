@@ -8,14 +8,16 @@ public class Radio {
     private int maxVolume = 100;
     private int currentVolume;
     private int currentStation;
+    private int countRadio;
+
 
 
 
     public Radio() {
     }
 
-    public Radio(int maxRadio) {
-        this.maxRadio = maxRadio;
+    public Radio(int countRadio) {
+        this.countRadio = maxRadio -1;
     }
 
 

@@ -23,32 +23,34 @@ public class Radio {
 
     public int setCurrentStation(int currentStation) {
         this.currentStation = currentStation;
+        if(currentStation > maxRadio) {
+            currentStation = maxRadio;
+        }
+
         return currentStation;
     }
+
 
     public int setRadioStation(int currentStation) {
         this.radioStation = currentStation-1;
         return radioStation;
     }
 
-    public void setCurrentVolume(int currentVolume) {
-        this.currentVolume = currentVolume;
-    }
-
-    public void setMaxRadio( int maxRadio) {
+    public void setMaxRadio(int maxRadio) {
         this.maxRadio = maxRadio;
     }
 
     public int nextStation() {
-        if (currentStation == maxRadio) {
+        if(currentStation < maxRadio) {
             currentStation++;
-            this.currentStation = minRadio;
-            return currentStation;
+        }
+        if (currentStation == maxRadio) {
+                this.currentStation = minRadio;
         }
 
-        currentStation ++;
+
         return currentStation;
-    }
+        }
 
     public int prevStation() {
         if (currentStation == minRadio) {
@@ -61,8 +63,11 @@ public class Radio {
         return currentStation;
     }
 
-    public int volumeUp() {
+    public void setCurrentVolume(int currentVolume) {
+        this.currentVolume = currentVolume;
+    }
 
+    public int volumeUp() {
         if (currentVolume == maxVolume) {
             currentVolume ++;
             currentVolume = maxVolume;
@@ -71,18 +76,16 @@ public class Radio {
         currentVolume++;
 
         return currentVolume;
-
-
     }
 
     public int volumeDown() {
-        if (currentVolume == minVolume) {
-            currentVolume = minVolume;
+            if (currentVolume == minVolume) {
+                currentVolume = minVolume;
+                return currentVolume;
+            }
+            currentVolume = currentVolume - 1;
             return currentVolume;
         }
-        currentVolume = currentVolume - 1;
-        return currentVolume;
-
     }
-}
+
 

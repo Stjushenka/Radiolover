@@ -11,19 +11,17 @@ public class Radio {
     private int countRadio;
 
 
-
-
     public Radio() {
     }
 
     public Radio(int countRadio) {
-        this.countRadio = maxRadio -1;
+        this.countRadio = maxRadio - 1;
     }
 
 
     public int setCurrentStation(int currentStation) {
         this.currentStation = currentStation;
-        if(currentStation > maxRadio) {
+        if (currentStation > maxRadio) {
             currentStation = maxRadio;
         }
 
@@ -32,7 +30,7 @@ public class Radio {
 
 
     public int setRadioStation(int currentStation) {
-        this.radioStation = currentStation-1;
+        this.radioStation = currentStation - 1;
         return radioStation;
     }
 
@@ -41,23 +39,23 @@ public class Radio {
     }
 
     public int nextStation() {
-        if(currentStation < maxRadio) {
+        if (currentStation < maxRadio) {
             currentStation++;
         }
         if (currentStation == maxRadio) {
-                this.currentStation = minRadio;
+            this.currentStation = minRadio;
         }
 
 
         return currentStation;
-        }
+    }
 
     public int prevStation() {
         if (currentStation == minRadio) {
             currentStation = maxRadio;
             return currentStation;
         }
-        currentStation = currentStation -1;
+        currentStation = currentStation - 1;
 
 
         return currentStation;
@@ -69,7 +67,7 @@ public class Radio {
 
     public int volumeUp() {
         if (currentVolume == maxVolume) {
-            currentVolume ++;
+            currentVolume++;
             currentVolume = maxVolume;
             return currentVolume;
         }
@@ -79,13 +77,13 @@ public class Radio {
     }
 
     public int volumeDown() {
-            if (currentVolume == minVolume) {
-                currentVolume = minVolume;
-                return currentVolume;
-            }
-            currentVolume = currentVolume - 1;
+        if (currentVolume == minVolume) {
+            currentVolume = minVolume;
             return currentVolume;
         }
+        currentVolume = currentVolume - 1;
+        return currentVolume;
     }
+}
 
 

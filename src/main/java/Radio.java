@@ -14,6 +14,15 @@ public class Radio {
     public Radio() {
     }
 
+    public Radio(int minRadio, int maxRadio, int minVolume, int maxVolume, int currentStation, int currentVolume) {
+        this.minRadio = minRadio;
+        this.maxRadio = maxRadio;
+        this.minVolume = minVolume;
+        this.maxVolume = maxVolume;
+        this.currentStation = currentStation;
+        this.currentVolume = currentVolume;
+    }
+
     public Radio(int countRadio) {
         this.countRadio = maxRadio - 1;
     }
@@ -61,8 +70,9 @@ public class Radio {
         return currentStation;
     }
 
-    public void setCurrentVolume(int currentVolume) {
+    public int setCurrentVolume(int currentVolume) {
         this.currentVolume = currentVolume;
+        return currentVolume;
     }
 
     public int volumeUp() {

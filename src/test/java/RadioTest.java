@@ -6,6 +6,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RadioTest {
 
     @Test
+    public void shouldUseRadio() {
+        Radio rad1 = new Radio(0,9, 0,100,5, 50);
+
+        assertEquals(5, rad1.setCurrentStation(5));
+
+        Radio rad2 = new Radio(0,9, 0,100,9, 50);
+
+        assertEquals(9, rad2.setCurrentStation(9));
+
+        Radio rad3 = new Radio(0,9, 0,100,5, 100);
+
+        assertEquals(100, rad3.setCurrentVolume(100));
+
+        Radio rad4 = new Radio(0,9, 0,100,5, 0);
+
+        assertEquals(0, rad4.setCurrentVolume(0));
+    }
+
+
+    @Test
     public void shouldUseConstructor() {
         Radio rad0 = new Radio(20);
         int actual = rad0.setRadioStation(15);
